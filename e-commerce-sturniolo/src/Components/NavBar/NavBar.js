@@ -1,17 +1,22 @@
-import CartWidget from '../CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
+import { NavLink } from 'react-router-dom'
 
-const Navbar = ()=> {
-    return (
-        <div expand="lg" variant="light" bg="light">
-          <div>
-            <button href="#">Almacen</button>
-            <button href="#">Perfumeria</button>
-            <button href="#">Higiene</button>
-          </div>
-          <CartWidget/>
+const NavBar = () => {
+  return (
+    <nav className="NavBar" >
+      <NavLink to='/'>
+          <h3>Super-Market</h3>
+      </NavLink>
+
+        <div className="Categories">
+            <NavLink to={'/category/celular'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Celular</NavLink>
+            <NavLink to={'/category/tablet'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Tablet</NavLink>
+            <NavLink to={'/category/notebook'} className={({ isActive}) => isActive ? 'ActiveOption' : 'Option'}>Notebook</NavLink>
         </div>
-    );
+        <CartWidget />
+    </nav>
+  )
 }
 
-export default Navbar;
+export default NavBar

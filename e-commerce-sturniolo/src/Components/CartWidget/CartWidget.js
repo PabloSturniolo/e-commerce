@@ -1,11 +1,14 @@
-import Cart from './assets/cart.svg'
-const CartWidget = ()=> {
-    return (
-        <div >
-            <img src={Cart} alt='Cart'></img>
-            <label>1</label>
+import './CartWidget.css'
+import cart from './assets/cart.svg'
+
+const CartWidget = () => {
+
+    return(
+        <div to='/cart' className="CartWidget">
+            <img src={cart} alt='cart-widget' className='CartImg'/>
+            {10}
         </div>
     );
 }
 
-export default CartWidget;
+export default CartWidget
